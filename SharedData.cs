@@ -11,7 +11,7 @@ namespace ProjetNarratif
     {
         public static string SelectedArme { get; set; }
         public static string PlayerName { get; set; }
-        public static bool FinsUnlock { get; set; }
+        
 
 
 
