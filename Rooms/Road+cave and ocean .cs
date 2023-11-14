@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace ProjetNarratif.Rooms
 {
-    
 
+    
     internal class RoadCaveAndLac: Room
     {
         bool fin = false;
@@ -22,19 +22,15 @@ namespace ProjetNarratif.Rooms
             description += $"Ou finalement tu souhaite retourner au [village].";
             return description;
         }
-
+        bool fins = false;
         internal override void ReceiveChoice(string choice)
         {
             switch (choice)
             {
                 case "lac":
-                    if (SharedData.FinsUnlock == true)
-                    {
-                      
-
-                    }
+                    
                   
-                    if(SharedData.FinsUnlock == false)
+                    if(fin == false)
                     {
                         Console.WriteLine("Vous ne pouvez pas traverser car il vous manque quelque chose.");
                         break;

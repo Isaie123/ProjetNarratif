@@ -16,6 +16,7 @@ namespace ProjetNarratif
 
 
         public static int Mana { get; set; } = 80;
+        
         public static int AttaqueBoss { get; set; } = 100;
         public static int HPBoss { get; set; } = 300;
         public static int TakePotion { get; set; } = 0;
