@@ -2,9 +2,15 @@
 using ProjetNarratif.Rooms;
 
 var game = new Game();
-game.Add(new Bedroom());
-game.Add(new Bathroom());
-game.Add(new AtticRoom());
+game.Add(new Begin());
+game.Add(new ennemis());
+game.Add(new Village());
+game.Add(new maison());
+game.Add(new Cave());
+game.Add(new RoadCaveAndLac());
+game.Add(new CaveFight());
+
+
 
 while (!game.IsGameOver())
 {
