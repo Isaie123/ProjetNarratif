@@ -64,7 +64,7 @@ namespace ProjetNarratif.Rooms
 
                         else if (line == "non")
                         {
-                            Console.WriteLine($"{SharedData.PlayerName} est sorti de la boutique pour retourner au village.");
+                            Console.WriteLine($" Le vendeur a dit bye bye  a {SharedData.PlayerName}");
                         }
                     } ///End Bombe boucle
                    
@@ -103,7 +103,7 @@ namespace ProjetNarratif.Rooms
                         else if (line == "non")
                         {
                             Console.Clear();
-                            Console.WriteLine($"{SharedData.PlayerName} est sorti de la boutique pour retourner au village.");
+                            Console.WriteLine($"Le vendeur a dit bye bye  a {SharedData.PlayerName}");
                         }
                         else if (SharedData.Gold>=25&&line == "prendre")
                         {
@@ -150,7 +150,7 @@ namespace ProjetNarratif.Rooms
                         else if (line == "non")
                         {
                             Console.Clear();
-                            Console.WriteLine($"{SharedData.PlayerName} est sorti de la boutique pour retourner au village.");
+                            Console.WriteLine($"Le vendeur a dit bye bye  a {SharedData.PlayerName}");
                         }
                         else if (SharedData.Gold >= 15 && line == "prendre")
                         {
@@ -213,7 +213,7 @@ namespace ProjetNarratif.Rooms
                       
                         else if (line == "non")
                         {
-                            Console.WriteLine($"{SharedData.PlayerName} est sorti de la boutique pour retourner au village.");
+                            Console.WriteLine($"Le vendeur a dit bye bye  a {SharedData.PlayerName}");
                         }
 
                     }

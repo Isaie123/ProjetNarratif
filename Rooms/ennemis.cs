@@ -76,7 +76,7 @@ namespace ProjetNarratif.Rooms
                             if (HPGoblin == 0)
                             {
                                 Console.WriteLine("Bravo, tu as réussi à le tuer !");
-                                Console.WriteLine("Tu as obtenu 50 gold.");
+                                Console.WriteLine("Tu as obtenu 100 gold.");
                                 Console.WriteLine("Après cette victoire, tu décides de retourner au village.");
                                 gold = 100;
                                 SharedData.Gold += gold;
@@ -84,7 +84,7 @@ namespace ProjetNarratif.Rooms
                                 Game.Transition<Village>();
                                 return;
                             }
-                        }
+
                             Console.WriteLine("Voulez-vous réattaquer ? Si vous écrivez [oui], sinon écrivez [non]");
                             line = Console.ReadLine().ToLower();
 
@@ -94,6 +94,7 @@ namespace ProjetNarratif.Rooms
                                 Game.Transition<Village>();
                                 return;
                             }
+                        }
                         
                         break;
                       
