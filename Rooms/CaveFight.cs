@@ -42,7 +42,7 @@ namespace ProjetNarratif.Rooms
                 switch (choice)
                 {
 
-                    case "vaicre":
+                    case "vaincre":
 
 
                         Console.WriteLine("Tu sorta ton épée pour le défier en duel");
@@ -450,18 +450,19 @@ namespace ProjetNarratif.Rooms
             if (SharedData.HPBoss == 0)
             {
                 Console.Clear();
-                Console.Write("\nBravo ! Tu as vaincu le boss et sauvé la princesse. " +
-                    "\nEnsemble, vous sortez de la grotte, laissant derrière vous un sentier de palmes victorieuses.");
-                Console.WriteLine("\n FIN");
-                Console.ReadLine();
+                Console.Write("Après cette victoire, tu t'approches de la princesse, \n" +
+                    "Et vous etes resortir de la grotte ensemble");
+                Game.Finish();
 
-                
-               
+
+
+
             }
             if (SharedData.HealtHero == 0)
             {
                 Console.WriteLine("\nVous êtes mort après cette défaite vous décidez de retourne au village pour prendre des force");
                 SharedData.HealtHero = 300;
+                SharedData.HPBoss = 300;
                 Game.Transition<Village>();
             }
         }

@@ -16,13 +16,13 @@ namespace ProjetNarratif
 
 
         public static int Mana { get; set; } = 80;
-        
+        public static bool fins { get; set; } = false;
         public static int AttaqueBoss { get; set; } = 100;
         public static int HPBoss { get; set; } = 300;
         public static int TakePotion { get; set; } = 0;
         public static int TakePotionMax { get; set; } = 0;
         public static int HPBonus { get; set; } = 0;
-        public static int Bombe { get; set; }=0;
+        public static int Bombe { get; set; }=0; 
         public static int EpeeDamage { set;  get; } = 50;
         public static int LongueEpee { get; set; } = 100;
         public static int HealtHero { get; set; } = Math.Max(HealtHero, 300);

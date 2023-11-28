@@ -10,7 +10,7 @@ namespace ProjetNarratif.Rooms
     {
         internal override string CreateDescription()
         {
-           
+            
             string description = $"En sortant, {SharedData.PlayerName} a vu une [boutique] et des [villageois] qui se parlaient entre eux.\n";
             description += $"Il y avait également un camp d'[ennemis] un peu plus loin et un [route] en pierre.\n" +
                 $"Ou retourne à [maison] pour changer d'arme";
@@ -25,10 +25,11 @@ namespace ProjetNarratif.Rooms
                     Console.Clear();
                     Console.WriteLine($"{SharedData.PlayerName} est entré dans la boutique et le vendeur lui a souhaité la bienvenue.");
                     Console.WriteLine($"{SharedData.PlayerName} a remarqué sur l'étagère :");
-                    Console.WriteLine("- Un sac de [bombes]\n" +
-                        "- Une [potion max]\n" +
-                        "- Une [potion]\n" +
-                        "- [Amélioration] pour l'arme ");
+                    Console.WriteLine("- Un sac de [bombes] = 5 gold\n" +
+                        "- Une [potion max] = 25 gold \n" +
+                        "- Une [potion] = 15 gold \n" +
+                        "- [Amélioration] pour l'arme = 30 gold ");
+                    Console.WriteLine($"{SharedData.PlayerName} remarqua qu'il avait {SharedData.Gold} gold ");
                     Console.WriteLine($"En voyant cela, le vendeur a demandé à {SharedData.PlayerName} quels objets il souhaitait examiner ou s'il préférait [regarder].");
                     string ChoixItem = Convert.ToString(Console.ReadLine());
 
@@ -121,7 +122,7 @@ namespace ProjetNarratif.Rooms
                     if (ChoixItem == "potion")
                     {
 
-                        if (SharedData.Gold < 25)
+                        if (SharedData.Gold < 15)
                         {
                             Console.Clear();
                             Console.WriteLine("Vous n'avez pas assez d'or pour acheter la potion max.");
@@ -183,7 +184,6 @@ namespace ProjetNarratif.Rooms
                              if (SharedData.Gold < 30)
                             {
                                 Console.Clear();
-                                SharedData.Gold -= 30;
                                 Console.WriteLine("Vous n'avez pas assez d'or pour acheter l'amélioration.");
                                 Console.WriteLine("Petit indice aller battre des monstres");
                                 Console.WriteLine($"{SharedData.PlayerName} est sorti de la boutique pour retourner au village.");
@@ -195,7 +195,6 @@ namespace ProjetNarratif.Rooms
                                 SharedData.EpeeDamage += 50;
                                 Console.WriteLine($"Tu fait maintenant {SharedData.EpeeDamage} {SharedData.PlayerName}.");
                                 Console.WriteLine("Merci, a dit le vendeur.");
-                               
                                
                             }
 
@@ -223,11 +222,15 @@ namespace ProjetNarratif.Rooms
 
                 case "villageois":
                     Console.Clear();
-                    Console.WriteLine("Tu t'aprochais des villageois qui discutait et tu as entendu\n" +
-                        "Pour dévoiler le chemin caché et atteindre le trésor secret, souviens-toi de ces mots : Tourne à  droite, puis encore à droite, " +
-                        "ensuite prends à gauche, avance vers le milieu, et enfin, dirige-toi à gauche. " +
-                        "Sauras-tu suivre ces directives  pour découvrir la voie qui te mènera à la victoire ?");
-                    Console.WriteLine($"\n{SharedData.PlayerName} decida de ce souvenir de ces direction car peut-être que ça vas être utile");
+                    Console.WriteLine("Tu t'approchais des villageois qui discutaient, et tu as entendu leur conversation :\n");
+                    Console.WriteLine("Pour dévoiler le chemin caché et atteindre le trésor secret, souviens-toi de ces mots :");
+                    Console.WriteLine("1. Tourne à droite.");
+                    Console.WriteLine("2. Puis encore à droite.");
+                    Console.WriteLine("3. Ensuite, prends à gauche.");
+                    Console.WriteLine("4. Avance vers le milieu.");
+                    Console.WriteLine("5. Et enfin, dirige-toi à gauche.\n");
+
+                    Console.WriteLine("Sauras-tu suivre ces directives pour découvrir la voie qui te mènera à la victoire ?\n");
                     Console.ReadKey();
                     Console.Clear();
                     break;

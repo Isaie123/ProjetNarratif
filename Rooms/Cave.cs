@@ -10,7 +10,8 @@ namespace ProjetNarratif.Rooms
     {
         internal override string CreateDescription()
         {
-            string description = "Arrivé dans la groutte tu vois trois chemains [droite], [gauche] et [milieux] ";
+            string description = "Arrivé dans la groutte tu vois trois chemains [droite], [gauche] et [milieu]\n ";
+            description += "Aussi vous pouvez toujour [quitter] la grotte a tout moment";
             return description;
                
         }
@@ -67,6 +68,10 @@ namespace ProjetNarratif.Rooms
                     {
                         Console.WriteLine("Erreur de parcours, recommençons.");
                     }
+                    break;
+                case "quitter":
+                    Console.Clear();
+                    Game.Transition<Village>();
                     break;
                 default:
                     Console.WriteLine("Choix non valide, tu dois choisir [droite], [gauche] ou [milieu].");
