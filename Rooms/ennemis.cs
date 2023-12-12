@@ -19,11 +19,12 @@ namespace ProjetNarratif.Rooms
         {
             if (!combat)
             {
+               
                 Console.WriteLine("Tu as déjà tué l'ennemi, tu décides donc de retourner au village.");
                 Game.Transition<Village>();
                 return string.Empty;
             }
-
+           
             string description = $"{SharedData.PlayerName} décida de se rendre au camp de l'ennemi.\n";
             description += $"Arrivé sur les lieux, {SharedData.PlayerName} vit un monstre qui lui courut dessus.\n" +
                             $"Tu décides de l'[attaquer] ou bien de [fuir].";
@@ -39,11 +40,13 @@ namespace ProjetNarratif.Rooms
                     case "attaquer":
                         while (SharedData.HealGoblin > 0 && line == "oui" && combat)
                         {
+                            
                             attaque = true;
 
                             int rmdcritique = random.Next(5);
                             if (rmdcritique == 0)
                             {
+                                
                                 Console.WriteLine($"{SharedData.PlayerName} effectue une attaque critique !");
                                 SharedData.HealGoblin-= SharedData.EpeeDamage * 2; // Double les dégâts pour une attaque critique
                                 SharedData.HealGoblin= Math.Max(SharedData.HealGoblin, 0);
@@ -53,7 +56,9 @@ namespace ProjetNarratif.Rooms
 
                             if (attaque)
                             {
-                                Console.Clear();
+                                
+                               
+                               
                                 Console.WriteLine($"{SharedData.PlayerName} brandit son épée avec détermination !");
                                 SharedData.HealGoblin -= SharedData.EpeeDamage;
                                 SharedData.HealGoblin = Math.Max(SharedData.HealGoblin, 0);
@@ -63,11 +68,13 @@ namespace ProjetNarratif.Rooms
                                 SharedData.HealtHero -= SharedData.AttaqueGoblin;
                                 SharedData.HealtHero = Math.Max(SharedData.HealtHero, 0);
                                 Console.WriteLine($"Le Goblin riposte, il te reste {SharedData.HealtHero} HP {SharedData.PlayerName}");
+                                
                             }
 
                             if (SharedData.HealGoblin <= 0)
                             {
                                 Console.Clear();
+                                
                                 Console.WriteLine("Bravo, tu as réussi à le tuer !");
                                 gold = 100;
                                 SharedData.Gold += gold;
@@ -79,7 +86,9 @@ namespace ProjetNarratif.Rooms
                             }
 
                             Console.WriteLine("Voulez-vous réattaquer ? Si vous écrivez [oui], sinon écrivez [non]");
+                           
                             line = Console.ReadLine().ToLower();
+                            Console.Clear();
 
                             if (line == "non")
                             {
@@ -109,6 +118,7 @@ namespace ProjetNarratif.Rooms
                         Console.WriteLine($"{SharedData.PlayerName} manie sa longue épée avec élégance !");
                         while (SharedData.HealtHero > 0 && line == "oui" && combat)
                         {
+                          
                             attaque = true;
                             
 
@@ -117,6 +127,7 @@ namespace ProjetNarratif.Rooms
 
                             if (rmdcritique == 0 && rdmattaque == 0)
                             {
+                                
                                 Console.WriteLine($"{SharedData.PlayerName} effectue une attaque critique !");
                                 SharedData.HealGoblin -= SharedData.LongueEpee * 2; // Double les dégâts pour une attaque critique
                                 SharedData.HealGoblin = Math.Max(SharedData.HealGoblin, 0);
@@ -125,7 +136,9 @@ namespace ProjetNarratif.Rooms
 
                             if (rdmattaque == 0 && attaque)
                             {
+                                
                                 Console.Clear();
+                               
                                 SharedData.HealGoblin -= SharedData.LongueEpee;
                                 SharedData.HealGoblin = Math.Max(SharedData.HealGoblin, 0);
                                 Console.WriteLine($"{SharedData.PlayerName} a pu lui enlever {SharedData.LongueEpee} HP, il lui reste {SharedData.HealGoblin}");
@@ -134,7 +147,7 @@ namespace ProjetNarratif.Rooms
                                 SharedData.HealtHero -= SharedData.AttaqueGoblin;
                                 SharedData.HealtHero = Math.Max(SharedData.HealtHero, 0);
                                 Console.WriteLine($"Le Goblin a aussi attaqué, il te reste {SharedData.HealtHero} HP {SharedData.PlayerName}");
-
+                               
                             }
                             else
                             {
@@ -142,11 +155,12 @@ namespace ProjetNarratif.Rooms
                                 SharedData.HealtHero -= SharedData.AttaqueGoblin;
                                 SharedData.HealtHero = Math.Max(SharedData.HealtHero, 0);
                                 Console.WriteLine($"Le Goblin a attaqué, il te reste {SharedData.HealtHero} HP {SharedData.PlayerName}");
-
+                                
                             }
 
                             if (SharedData.HealtHero == 0)
                             {
+                                
                                 Console.Clear();
                                 Console.WriteLine("Bravo, tu as réussi à le tuer !");
                                 gold = 100;
@@ -163,6 +177,7 @@ namespace ProjetNarratif.Rooms
                             line = Console.ReadLine().ToLower();
                             if (line == "non")
                             {
+                                
                                 Console.Clear();
                                 Console.WriteLine($"{SharedData.PlayerName} décida de courir le plus rapidement pour semer l'ennemi.");
                                 line = "oui";

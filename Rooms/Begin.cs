@@ -18,12 +18,15 @@ namespace ProjetNarratif.Rooms
             Console.Clear();
 
             string description = $"Bonjour, {SharedData.PlayerName}.\n\n";
-            description += "Tu te reveilla dans ton bon lit douillait et tu remarqua que le village était en panique.\n";
-            description += $"Sans perdre de temps, tu as décidé d'aller voir un villageois pour lui demander ce qu'il se passait.\n";
-            description += "Le villageois ta répondu que la princesse avait été kidnappée.\n";
-            description += $"Après avoir entendu cela, une vague de détermination submergea {SharedData.PlayerName} décida d'aller chercher son armure.\n";
-            description += $"En allant voir tes armes, {SharedData.PlayerName} a remarqué qu'il avait le choix entre deux armes : une [épée] ou une [longue épée].";
+            description += "Tu te réveilles dans ton bon lit douillet et tu remarques que le village est en panique.\n";
+            description += $"Sans perdre de temps, tu décides d'aller voir un villageois pour lui demander ce qu'il se passe.\n";
+            description += "Le villageois te répond avec panique : \"LA PRINCESSE A ÉTÉ KIDNAPPÉE\"\n";
+            description += $"Après avoir entendu cela, une vague de détermination submerge {SharedData.PlayerName} qui décide d'aller chercher son armure.\n";
+            description += $"En allant voir tes armes, {SharedData.PlayerName} remarque qu'il a le choix entre deux armes : une [épée] ou une [longue épée].";
             return description;
+
+
+            
         }
 
         internal override void ReceiveChoice(string choice)
@@ -34,8 +37,8 @@ namespace ProjetNarratif.Rooms
                 {
                     case "epee":
                     case "épée":
-                        Console.WriteLine($"En regardant l'épée, {SharedData.PlayerName} a remarqué qu'elle faisait 50 dégâts.");
-                        Console.WriteLine("Écris [continuer] pour la prendre ou [changer] pour voir l'autre.");
+                        Console.WriteLine($"En regardant l'épée, {SharedData.PlayerName} a remarqué qu'elle infligait 50 dégâts.");
+                        Console.WriteLine("Veux-tu [continuer] et la prendre, ou [changer] pour voir l'autre option.");
                         string line = Console.ReadLine().ToLower();
                         if (line == "continuer")
                         {
@@ -46,12 +49,12 @@ namespace ProjetNarratif.Rooms
                         else if (line == "changer")
                         {
                             Console.WriteLine("Tu as décidé d'aller voir l'autre arme, pas de problème.");
-                            Console.WriteLine("D'abord, la longue épée fait 100 dégâts, mais elle touche une fois sur deux.");
+                            Console.WriteLine("La longue épée inflige 100 dégâts, bien qu'elle touche une fois sur deux.");
                             Console.WriteLine("Maintenant, tu décides de prendre quelle arme : l'[épée] ou la [longue épée].");
                             line = Console.ReadLine().ToLower();
                             if (line == "epee" || line == "épée")
                             {
-                                Console.WriteLine("Tu as décidé de prendre l'épée, bon choix");
+                                Console.WriteLine("Tu as opté pour l'épée, bon choix");
                                 SharedData.SelectedArme = "épée";
                                 RestartArme = false;
                             }
@@ -70,8 +73,9 @@ namespace ProjetNarratif.Rooms
 
                     case "longue epee":
                     case "longue épée":
-                        Console.WriteLine($"En regardant la longue épée, {SharedData.PlayerName} a remarqué qu'elle fait 100 dégâts, mais elle touche une fois sur deux.");
-                        Console.WriteLine("Écris [continuer] pour la prendre ou [changer] pour voir l'autre.");
+                        Console.WriteLine($"En examinant la longue épée, {SharedData.PlayerName} a perçu son incroyable talent dégâts, \n" +
+                            $"mais touche une fois sur deux.");
+                        Console.WriteLine("Veux-tu [continuer] et la prendre ou [changer] pour obsever l'autre arme.");
                         line = Console.ReadLine().ToLower();
                         if (line == "continuer")
                         {
@@ -82,18 +86,18 @@ namespace ProjetNarratif.Rooms
                         else if (line == "changer")
                         {
                             Console.WriteLine("Tu as décidé d'aller voir l'autre arme, pas de problème.");
-                            Console.WriteLine("D'abord, l'épée fait 50 dégâts.");
+                            Console.WriteLine("L'épée moin impossant inflige 50 dégâts.");
                             Console.WriteLine("Maintenant, tu décides de prendre quelle arme : l'[épée] ou la [longue épée].");
                             line = Console.ReadLine().ToLower();
                             if (line == "epee" || line == "épée")
                             {
-                                Console.WriteLine("Tu as décidé de prendre l'épée, bon choix");
+                                Console.WriteLine("Tu as opté pour l'épée, bon choix");
                                 SharedData.SelectedArme = "épée"; 
                                 RestartArme = false;
                             }
                             else if (line == "longue epee" || line == "longue épée")
                             {
-                                Console.WriteLine("Tu as décidé de prendre la longue épée, bon choix");
+                                Console.WriteLine("Tu as décidé degardé ton chois la longue épée, bon choix");
                                 SharedData.SelectedArme = "longue épée"; 
                                 RestartArme = false;
                             }

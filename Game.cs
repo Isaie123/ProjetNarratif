@@ -4,6 +4,9 @@ namespace ProjetNarratif
 {
     internal class Game
     {
+        internal static bool epee = true;
+        internal static bool lance = true;
+        internal static  bool bouclier = true;
         List<Room> rooms = new();
         Room currentRoom;
         internal bool IsGameOver() => isFinished;
@@ -18,6 +21,7 @@ namespace ProjetNarratif
                 currentRoom = room;
             }
         }
+        
 
         internal string CurrentRoomDescription => currentRoom.CreateDescription();
 
