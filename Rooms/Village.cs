@@ -16,7 +16,7 @@ namespace ProjetNarratif.Rooms
         {
           
             string description = $"En sortant, {SharedData.PlayerName} vu une [boutique] et des [villageois] qui se parlaient entre eux.\n";
-            description += $"Il y avait également un camp d'[ennemis] un peu plus loin et une [route] en pierre.\n" +
+            description += $"Il y avait également un camp d'[ennemis] un peu plus loin et une [route] en pierre. sinon au loin tu vois une [forêt]\n" +
                 $"Ou tu peux toujours retourne à [maison] pour changer d'arme";
             return description;
         }
@@ -266,7 +266,10 @@ namespace ProjetNarratif.Rooms
                     new Carte();
                     break;
 
-
+                case "forêt":
+                case "foret":
+                    Game.Transition<Forest>();
+                    break;
                 default:
                     Console.WriteLine("Choix incorrect.");
                     break;

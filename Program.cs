@@ -12,7 +12,7 @@ game.Add(new RoadCaveAndLac());
 game.Add(new CaveFight());
 game.Add(new Lac());
 game.Add(new VillageLac());
-
+game.Add(new Forest());
 
 while (!game.IsGameOver())
 {
